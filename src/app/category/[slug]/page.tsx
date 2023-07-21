@@ -6,7 +6,6 @@ const getProductsByCategory = (category: string) => {
     return Products.filter((product) => product.category === category);
 };
 
-
 export default function Page({ params }: { params: { slug: string } }) {
     const result = getProductsByCategory(params.slug);
     return (
@@ -21,7 +20,6 @@ export default function Page({ params }: { params: { slug: string } }) {
                 category= {product.category}
                 id={product.id}
                 />
-        
               )) : <p> No Products Found</p>
         }
       </div>

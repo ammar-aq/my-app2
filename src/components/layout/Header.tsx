@@ -7,7 +7,22 @@ import {ShoppingCart} from "lucide-react"
 import {RootState} from "@/store/store"
 // import { Input } from "@/components/ui/input"
 
+import {Button} from "@/components/ui/button";
+import {client} from '@/lib/sanityClient';
+import {Image as IImage} from 'sanity';
+// import { urlForImage } from '../../sanity/lib/image';
+import {FC} from 'react';
 
+  const handleAddToCart = async () => {
+    const res = await fetch("/api/cart", {
+      method: "POST",
+      body: JSON.stringify({
+        // product_id: props.id
+      })
+    })
+    const result = await res.json()
+  }
+    // console.log(props.title)
 
 const Header = () => {
   const cartValue= useSelector(
@@ -49,7 +64,8 @@ const Header = () => {
         <div className="h-10 w-10 rounded-full flex justify-center items-center bg-gray-200 relative">
         <span className="absolute right-0 top-0 rounded-full bg-red-500 h-5 w-5 text-white text-sx text-center">
           {cartValue}</span>
-        <ShoppingCart/>
+        
+        <Button onClick={()=> handleAddToCart}><ShoppingCart/></Button>
         </div>
       </div>
     )

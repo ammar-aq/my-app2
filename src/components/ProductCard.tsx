@@ -1,7 +1,9 @@
+ "use client"
 import React from 'react'
 import Link from "next/link"
 import Image, {StaticImageData} from "next/image"
 import AddToCart from './AddToCart'
+
 
 function ProductCard(props:{ 
   title:string, 
@@ -10,7 +12,7 @@ function ProductCard(props:{
   category: string
   id: number;
 }) {
-    // console.log(props.title)
+
   return (
     <Link href={`/products/${props.id}`}>
     <div className='py-6'>
@@ -20,6 +22,7 @@ function ProductCard(props:{
         <p className="font-bold text-lg">Category{" "} <span className="text-base font-normal"> {props.category}</span>
         </p>
         <AddToCart/>
+        
     </div>
     </Link>
   )

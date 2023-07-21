@@ -1,7 +1,7 @@
 import { defineField } from "sanity";
 
 export const product = {
-    name: 'Product',
+    name: 'product',
     type: 'document',
     title: 'Product',
     fields: [

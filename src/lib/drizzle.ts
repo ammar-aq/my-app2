@@ -8,11 +8,11 @@ export const cartTable = pgTable("cart", {
         length: 255
 
     }).notNull(),
-    product_id: varchar("user_id",{
+    product_id: varchar("product_id",{
         length: 255
 
     }).notNull(),
-    quantity :integer("quanitty").notNull()
+    quantity :integer("quantity").notNull()
 
 });
 
